@@ -6,6 +6,7 @@ const cors = require('cors');
 app.use(cors());
 
 const categoris = require('./data/categories.json');
+const news = require('./data/news.json');
 
 app.get('/', (req, res) => {
     res.send("News Today Server!");
@@ -13,6 +14,10 @@ app.get('/', (req, res) => {
 
 app.get('/categories', (req, res) => {
     res.send(categoris);
+})
+
+app.get('/news', (req, res) => {
+    res.send(news);
 })
 
 app.listen(port, () => {
